@@ -9,9 +9,13 @@
         $scope.message = "";
         $scope.color = "black";
         $scope.tooMuch = function(){
-            if($scope.message.toLowerCase() === "too much!" || $scope.message.toLowerCase() === "enjoy!"){
+            if($scope.message == ""){
+                $scope.message = "please enter data first"
+            }else if($scope.message.split(",").length < 3){
+                $scope.message = "Enjoy!"
                 $scope.color = "green";
-            }else if($scope.message.toLowerCase() === "please enter data first"){
+            }else{
+                $scope.message = "Too much!"
                 $scope.color = "red";
             }
         };
